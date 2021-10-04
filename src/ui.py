@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import wx
-from database_manager import *
+from src.database_manager import *
 
 class UI(wx.Frame):
 	def __init__(self,parent):
@@ -21,11 +21,11 @@ class UI(wx.Frame):
 		self.menubar = wx.MenuBar(0)
 		self.file_menu = wx.Menu()
 		self.file_menu_close = wx.MenuItem( self.file_menu,wx.ID_EXIT,u"Close",wx.EmptyString,wx.ITEM_NORMAL)
-		self.file_menu.AppendItem(self.file_menu_close)
+		self.file_menu.Append(self.file_menu_close)
 		self.menubar.Append(self.file_menu, u"&File")
 		self.help_menu = wx.Menu()
 		self.help_menu_about = wx.MenuItem( self.help_menu,0,u"About",wx.EmptyString,wx.ITEM_NORMAL)
-		self.help_menu.AppendItem(self.help_menu_about)
+		self.help_menu.Append(self.help_menu_about)
 		self.menubar.Append(self.help_menu, u"&Help")
 		self.SetMenuBar(self.menubar)
 
@@ -45,6 +45,7 @@ class UI(wx.Frame):
 		bSizer1.Add( bSizer2, 0, wx.EXPAND, 5 )
 		bSizer3 = wx.BoxSizer( wx.VERTICAL )
 		self.m_textCtrl2 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.TE_MULTILINE )
+		self.m_textCtrl2.SetBackgroundColour( wx.Colour( 229, 229, 229 ) )
 		bSizer3.Add( self.m_textCtrl2, 1, wx.ALL|wx.EXPAND, 5 )
 		bSizer1.Add( bSizer3, 1, wx.EXPAND, 5 )
 		self.SetSizer( bSizer1 )
@@ -126,7 +127,7 @@ class abuot ( wx.Dialog ):
 		self.m_staticText1.Wrap( -1 )
 		bSizer3.Add( self.m_staticText1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, u"https://github.com/pacpac1992/Diccionario_Ingles_Spanish", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, u"https://github.com/jucarhev/Diccionario_Ingles_Spanish", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2.Wrap( -1 )
 		bSizer3.Add( self.m_staticText2, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
